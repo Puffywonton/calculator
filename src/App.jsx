@@ -5,18 +5,20 @@ import BottomDisplay from './components/DisplayStuff/BottomDisplay';
 import TopDisplay from './components/DisplayStuff/TopDisplay';
 
 function App() {
-  const [firstInput, setFirstInput] = useState({
-    value: "123",
+  const [userInput, setUserInput] = useState("")
 
-  })
-  const [secondInput, setSecondInput] = useState({
-    value: "123",
+  // const [firstInput, setFirstInput] = useState({
+  //   value: "123",
 
-  })
-  const [signInput, setsignInput] = useState({
-    value: "+",
+  // })
+  // const [secondInput, setSecondInput] = useState({
+  //   value: "123",
 
-  })
+  // })
+  // const [signInput, setsignInput] = useState({
+  //   value: "+",
+
+  // })
   //add another userinput
 
   const [result, setResult] = useState({
@@ -30,14 +32,14 @@ function App() {
           <div className="outside">
               <div className="display_box">
                   <TopDisplay 
-                    // value= {userInput.value}
+                    value= {userInput}
                   />
                   <BottomDisplay 
                     value= {result.value}/>
               </div>
               <ButtonsGenerator 
-              // setUserInput = {setUserInput}
-              // userInput = {userInput}
+              setUserInput = {setUserInput}
+              userInput = {userInput}
               />
           </div>
       </div>

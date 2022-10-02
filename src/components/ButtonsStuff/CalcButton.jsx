@@ -1,21 +1,21 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const CalcButton = (values) => {
-    const handleChange = (event) => {
-        console.log(values.value)
+const CalcButton = (props) => {
+    const handleChange = () => {
+        props.setUserInput(toto => toto + props.values.value)
     }
     return(
         <div 
-            className={values.insideClassName}
-            id={values.id}
+            className={props.values.insideClassName}
+            id={props.values.id}
             onClick={handleChange}
         >
-            {values.icon ? (
+            {props.values.icon ? (
                 <FontAwesomeIcon
-                    onClick={handleChange} 
-                    icon={values.icon} />) : null}
-            {values.text ? (values.text) : null}
+                    className="fontAwesome"
+                    icon={props.values.icon} />) : null}
+            {props.values.text ? (props.values.text) : null}
         </div>
     )
 }

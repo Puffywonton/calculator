@@ -1,4 +1,4 @@
-$square_size : 6rem;
+$square_size : 7rem;
 
 $primary_color: #FF9A14;
 $secondary_color: #0A0708;
@@ -33,6 +33,11 @@ $forth_color: #FFFFFF;
   align-items: center;
   background-color: grey;
 }
+
+.fontAwesome {
+  pointer-events: none;
+}
+
 
 .outside{
   display: flex;

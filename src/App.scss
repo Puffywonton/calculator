@@ -5,6 +5,24 @@ $secondary_color: #0A0708;
 $tertiary_color: #444444;
 $forth_color: #FFFFFF;
 
+@mixin insideButton($text_color, $backgroundcolor) {
+  font-size: 3rem;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  border: 2px solid $secondary_color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $text_color;
+  background-color: $backgroundcolor;
+  &:hover{
+    background-color: lighten($backgroundcolor, 10%);
+    color: red;
+    transition: 0.3s;
+  }
+}
+
 *{
   box-sizing: border-box;
 }
@@ -64,45 +82,25 @@ $forth_color: #FFFFFF;
   width: $square_size;
   height: $square_size;
   background-color: $secondary_color;
-  :hover{
-    color: red;
-    font-size: 3rem;
-  }
+  
 }
 
 .button_equal {
   width: $square_size;
   height: #{$square_size * 2} ;
   background-color: $secondary_color;
-  :hover{
-    color: red;
-  }
-}
-
-.inside {
-  font-size: 2rem;
-  width: 100%;
-  height: 100%;
-  border: 2px solid $secondary_color;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
 }
 
 .pad {
-  color: $forth_color;
-  background-color: $tertiary_color;
+  @include insideButton($forth_color, $tertiary_color);
 }
 
 .right_side{
-  color: $forth_color;
-  background-color: $primary_color;
+  @include insideButton($forth_color, $primary_color);
 }
 
 .top {
-  color: $primary_color;
-  background-color: $tertiary_color;
+  @include insideButton($primary_color, $tertiary_color);
 }
 
 .border-bottom-left-radius{
